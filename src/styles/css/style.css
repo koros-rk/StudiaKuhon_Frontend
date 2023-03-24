@@ -1404,13 +1404,13 @@ main {
     width: 13px;
     height: 13px;
     padding-left: 0;
-
+    
 }
 
 .ready-furniture__box .form_radio label:before {
     top: 50%;
     bottom: auto;
-
+    
 }
 
 .ready-furniture__box .form_radio input[type=radio]:checked+label:before {
