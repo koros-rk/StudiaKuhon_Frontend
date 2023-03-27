@@ -1331,7 +1331,7 @@ main {
 
 /* ____________________________________________________ page-ready-furniture _______________________________________________________________________ */
 #Container .mix {
-    display: none;
+    /*display: none;*/
     height: auto;
     max-height: 100%;
 }

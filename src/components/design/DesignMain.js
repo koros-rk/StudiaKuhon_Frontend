@@ -1,49 +1,76 @@
 import React from 'react';
-import DesignItem from "./DesignItem";
-
-import Image from "../utils/Image";
-import DesignFilter from "./DesignFilter";
-
-import arrow from "../../styles/img/icons/red__arrow.svg";
 import {DefaultAPIInstance} from "../../api";
+import DesignItem from "./DesignItem";
+import DesignFilter from "./DesignFilter";
+import Image from "../utils/Image";
+import arrow from "../../styles/img/icons/red__arrow.svg";
+import chunkify from "../utils/Chunkify";
 
 const DesignMain = () => {
-    const [designs, setDesigns] = React.useState([])
     const [filter, setFilter] = React.useState('')
     const [nextURL, setNextURL] = React.useState('')
+    const [designsLeft, setDesignsLeft] = React.useState([])
+    const [designsRight, setDesignsRight] = React.useState([])
     const [isPagination, setIsPagination] = React.useState(true)
 
     React.useEffect(() => {
         DefaultAPIInstance.get("/design/?" + filter)
             .then((response) => {
-                setDesigns(current => [...current, ...response.data.results])
-                if(response.data.next !== null) {
+
+                updateDesigns(response.data.results)
+
+                if (response.data.next !== null) {
                     setNextURL(response.data.next.replace('http://127.0.0.1:8000/api/v1/design/?', ''))
                     setIsPagination(true)
-                }
-                else {
+                } else {
                     setIsPagination(false)
                 }
             })
-            .catch(e => {console.log(e)});
+            .catch(e => {
+                console.log(e)
+            });
     }, [filter]);
 
     const fetchNext = () => {
         DefaultAPIInstance.get("/design/?" + nextURL)
             .then((response) => {
-                setDesigns(current => [...current, ...response.data.results])
-                if(response.data.next !== null) {
+
+                updateDesigns(response.data.results)
+
+                if (response.data.next !== null) {
                     setNextURL(response.data.next.replace('http://127.0.0.1:8000/api/v1/design/?', ''))
-                }
-                else {
+                } else {
                     setIsPagination(false)
                 }
             })
-            .catch(e => {console.log(e)});
+            .catch(e => {
+                console.log(e)
+            });
     }
 
-     const makeFilter = async (filterString) => {
-        await setDesigns([])
+    const updateDesigns = (data) => {
+        const chunks = chunkify(data, 2, true)
+
+        console.log(chunks[0])
+        console.log(chunks[1])
+
+        if (chunks[0]) {
+            setDesignsLeft(current => [...current, ...chunks[0]])
+        } else {
+            setDesignsLeft(current => [...current, ...[]])
+        }
+
+        if (chunks[1]) {
+            setDesignsRight(current => [...current, ...chunks[1]])
+        } else {
+            setDesignsRight(current => [...current, ...[]])
+        }
+
+    }
+
+    const makeFilter = async (filterString) => {
+        await setDesignsLeft([])
+        await setDesignsRight([])
         await setFilter(filterString)
     }
 
@@ -60,25 +87,26 @@ const DesignMain = () => {
 
                         <div className="ready-design__block">
 
-                            {designs.slice(0, Math.ceil(designs.length/2)).map(item => (<DesignItem key={item.id} item={item}/>))}
+                            {designsLeft.map(item => (<DesignItem key={item.id} item={item}/>))}
 
                         </div>
 
                         <div className="ready-design__block">
 
-                            {designs.slice(Math.ceil(designs.length/2)).map(item => (<DesignItem key={item.id} item={item}/>))}
+                            {designsRight.map(item => (<DesignItem key={item.id} item={item}/>))}
 
                         </div>
 
                     </div>
 
 
-                        <div onClick={fetchNext} className="btn__more" style={{visibility: isPagination ? 'visible' : 'hidden'}}>
-                            <button className="show-more" type="button">
-                                <span>переглянути більше</span>
-                                <Image image={arrow}/>
-                            </button>
-                        </div>
+                    <div onClick={fetchNext} className="btn__more"
+                         style={{visibility: isPagination ? 'visible' : 'hidden'}}>
+                        <button className="show-more" type="button">
+                            <span>переглянути більше</span>
+                            <Image image={arrow}/>
+                        </button>
+                    </div>
 
                 </div>
             </div>

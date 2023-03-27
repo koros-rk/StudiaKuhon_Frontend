@@ -33,23 +33,23 @@ class Base extends React.Component {
                 {/*<PromoSlider/>*/}
 
                  {/*// <!-- ____________ s3_design-project / s4_individual-feed ____________ -->*/}
-                <section class="design-project indent-top">
-                    <div class="design-project__container">
-                        <h2 class="main-title">Чому саме дизайн-проект?</h2>
+                <section className="design-project indent-top">
+                    <div className="design-project__container">
+                        <h2 className="main-title">Чому саме дизайн-проект?</h2>
                         <p>Це оптимальний шлях до бажаного результату!</p>
-                        <div class="design-project__img">
+                        <div className="design-project__img">
                             <img src={room_3} alt="room-3"/>
                         </div>
                     </div>
-                    <div class="individual-feed__container indent-top">
-                        <h2 class="individual-feed__title main-title light-text">Шукаєте <br/> індивідуальний підхід? </h2>
-                        <p class="light-text">
+                    <div className="individual-feed__container indent-top">
+                        <h2 className="individual-feed__title main-title light-text">Шукаєте <br/> індивідуальний підхід? </h2>
+                        <p className="light-text">
                             Ми розробляємо наші проєкти, враховуючи особливості об’єкта,
                             можливості та смаки замовника, його бачення та цілі.
                             Розробляємо проекти як частини об’єкту так і під ключ.
                         </p>
-                        <div class="individual-feed__btn">
-                            <a href="#!" class="btn__touch btn__touch-dark">консультація</a>
+                        <div className="individual-feed__btn">
+                            <a href="#!" className="btn__touch btn__touch-dark">консультація</a>
                         </div>
                     </div>
                 </section>
@@ -58,12 +58,12 @@ class Base extends React.Component {
                 {/*<ReviewSlider/>*/}
 
                 {/*<!-- ____________ s6_choose ____________ -->*/}
-                <section class="choose indent-top">
-                    <div class="choose__container">
-                        <h2 class="choose__title main-title big-text light-text">Чому варто обрати нашу компанію</h2>
-                        <div class="choose__wrapper">
-                            <div class="choose__items light-text choose__items-left">
-                                <div class="choose__item">
+                <section className="choose indent-top">
+                    <div className="choose__container">
+                        <h2 className="choose__title main-title big-text light-text">Чому варто обрати нашу компанію</h2>
+                        <div className="choose__wrapper">
+                            <div className="choose__items light-text choose__items-left">
+                                <div className="choose__item">
                                     <h3>
                                         Ми відкриті до діалогу
                                     </h3>
@@ -72,7 +72,7 @@ class Base extends React.Component {
                                         реалізації так і після
                                     </p>
                                 </div>
-                                <div class="choose__item">
+                                <div className="choose__item">
                                     <h3>
                                         Ми досвідчені
                                     </h3>
@@ -82,7 +82,7 @@ class Base extends React.Component {
                                         ваших мрій
                                     </p>
                                 </div>
-                                <div class="choose__item">
+                                <div className="choose__item">
                                     <h3>
                                         Ми точні і конкретні
                                     </h3>
@@ -91,8 +91,8 @@ class Base extends React.Component {
                                     </p>
                                 </div>
                             </div>
-                            <div class="choose__items light-text choose__items-right">
-                                <div class="choose__item">
+                            <div className="choose__items light-text choose__items-right">
+                                <div className="choose__item">
                                     <h3>
                                         Ми виконуємо весь спектр робіт
                                     </h3>
@@ -100,7 +100,7 @@ class Base extends React.Component {
                                         Ми реалізуємо проекти від ідеї і концепції до виготовлення та встановлення меблів
                                     </p>
                                 </div>
-                                <div class="choose__item">
+                                <div className="choose__item">
                                     <h3>
                                         Ми на зв'язку
                                     </h3>
@@ -110,7 +110,7 @@ class Base extends React.Component {
                                         бажанням клієнта
                                     </p>
                                 </div>
-                                <div class="choose__item">
+                                <div className="choose__item">
                                     <h3>
                                         Ми концептуальні
                                     </h3>
