@@ -1,7 +1,9 @@
 import React from "react";
 
 import Image from "../utils/Image";
-import PromoSlider from "./PromoSlider";
+// import PromoSlider from "./PromoSlider";
+import PromoSlider from "./PromoSlider.js";
+
 import ReviewSlider from "./ReviewSlider";
 import room from "../../styles/img/1.jpg";
 import room_3 from "../../styles/img/3.jpg";
@@ -30,7 +32,7 @@ class Base extends React.Component {
                 </section>
 
                 {/*<!-- ____________ s2_unique-design (slider) ____________ -->*/}
-                {/*<PromoSlider/>*/}
+                <PromoSlider />
 
                  {/*// <!-- ____________ s3_design-project / s4_individual-feed ____________ -->*/}
                 <section class="design-project indent-top">
@@ -55,7 +57,8 @@ class Base extends React.Component {
                 </section>
 
                 {/*<!-- ____________ s5_review (slider) ____________ -->*/}
-                {/*<ReviewSlider/>*/}
+
+                <ReviewSlider/>
 
                 {/*<!-- ____________ s6_choose ____________ -->*/}
                 <section class="choose indent-top">
