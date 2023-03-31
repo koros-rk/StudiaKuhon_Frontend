@@ -302,7 +302,7 @@ main {
     height: 6px;
     transition: all .4s ease 0s;
     cursor: pointer;
-
+    /*fixed*/
     transform: translate3d(0px, 0px, 0px);
     bottom: 17px;
     margin: 0;
@@ -431,6 +431,7 @@ main {
     background-color: var(--color-2);
     border-radius: 32px;
     padding: 0 32px 32px;
+
 }
 
 .review__wrapper-slider-item p:nth-child(1) {
@@ -444,7 +445,9 @@ main {
 }
 
 .review__wrapper-slider-item div {
-    padding-top: 72px;
+    /*padding-top: 72px;*/
+    /*padding-bottom: 20px; !*NEED FIX*!*/
+
 }
 
 .review__wrapper-slider-item div p:nth-child(2) {
@@ -461,22 +464,47 @@ main {
     padding: 0px 90px !important;
 }
 
+.review_backing{
+
+}
+
 .variable-width .slick-track {
     display: flex;
     gap: 30px;
     margin-left: -354px;
+    /*width: 500px; !* встановлення ширини елементів в слайдері *!*/
+    /*position: absolute; !* робить елементи абсолютними *!*/
+    /*top: 0; !* позиціює елементи вертикально на початок слайдера *!*/
+    /*left: 0; !* позиціює елементи горизонтально на початок слайдера *!*/
+    /*margin-right: 10px; !* встановлення відступу між елементами *!*/
 }
 
+/*.slider-item {*/
+/*    !*max-width: 612px;*!*/
+/*    !*width: 500px; !* встановлення ширини елементів в слайдері *!*!*/
+/*    !*position: absolute; !* робить елементи абсолютними *!*!*/
+/*    top: 0; !* позиціює елементи вертикально на початок слайдера *!*/
+/*    left: 0; !* позиціює елементи горизонтально на початок слайдера *!*/
+/*    margin-right: 10px; !* встановлення відступу між елементами *!*/
+/*    margin-left: 10px;*/
+/*}*/
+
 .slider-item-1 {
-    max-width: 612px;
+    /*max-width: 612px;*/
+    width: 612px !important;
+    height: 425px;
 }
 
 .slider-item-2 {
-    max-width: 415px;
+    /*max-width: 415px;*/
+    width: 415px !important;
+    height: 425px;
 }
 
 .slider-item-3 {
-    max-width: 514px;
+    /*max-width: 514px;*/
+    width: 514px !important;
+    height: 425px;
 }
 
 .variable-width {
@@ -487,6 +515,8 @@ main {
     max-width: 1057px;
     background-color: rgba(249, 249, 249, 0.23);
     margin: 92px 15px 0;
+    transform: translate3d(0px, 0px, 0px);
+    width: 100%;
 }
 
 .variable-width.dots_slick .slick-dots .slick-active {
@@ -494,7 +524,7 @@ main {
 }
 
 .variable-width.dots_slick .slick-dots li {
-    max-width: 243px;
+    max-width: 243px; /*Ширина дотсів*/
 }
 
 .variable-width.slick-initialized .slick-slide {
@@ -504,29 +534,42 @@ main {
     justify-content: space-between;
 }
 
-.dots_slick .slick-arrow {
-    position: absolute;
-    bottom: 0;
-    left: 1316px;
-    font-size: 0;
-}
+/*.dots_slick .slick-arrow {*/
 
-.dots_slick .slick-prev::after,
-.dots_slick .slick-next::after {
-    position: absolute;
-    content: '';
-    background: url(../img/icons/right-arrow.svg) no-repeat right/contain;
-    bottom: -5px;
-    right: 135px;
-    font-size: 0;
-    width: 30px;
-    height: 16px;
-}
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 1316px; !*нужний розділ "FIX"*!*/
+/*    font-size: 0;*/
+/*}*/
 
-.dots_slick .slick-prev::after {
-    background: url(../img/icons/left-arrow.svg) no-repeat left/contain;
-    right: 195px;
-}
+/*.dots_slick .slick-prev::after,*/
+/*.dots_slick .slick-next::after {*/
+/*    position: absolute;*/
+/*    !*content: '';*!*/
+/*    background: url(../img/icons/right-arrow.svg) no-repeat right/contain;*/
+/*    bottom: -200px; !*a little fix*!*/
+/*    right: 135px;*/
+/*    font-size: 0;*/
+/*    width: 30px;*/
+/*    height: 16px;*/
+/*}*/
+
+/*.dots_slick .slick-prev::before,*/
+/*.dots_slick .slick-next::before {*/
+/*    !*position: absolute;*!*/
+/*    content: '';*/
+/*    background: url(../img/icons/left-arrow.svg) no-repeat left/contain;*/
+/*    !*bottom: -200px; !*a little fix*!*!*/
+/*    !*right: 135px;*!*/
+/*    !*font-size: 0;*!*/
+/*    !*width: 30px;*!*/
+/*    !*height: 16px;*!*/
+/*}*/
+
+/*.dots_slick .slick-prev::after {*/
+/*    background: url(../img/icons/left-arrow.svg) no-repeat left/contain;*/
+/*    right: 195px;*/
+/*}*/
 
 /* ____________ s6_choose ____________ */
 .choose {
