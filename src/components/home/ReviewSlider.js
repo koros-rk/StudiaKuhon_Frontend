@@ -1,9 +1,11 @@
 import React from 'react';
 import Slider from "react-slick";
-
-import Image from "../utils/Image";
-import room from "../../styles/img/1.jpg";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import {all} from "axios";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default class ReviewSlider extends React.Component {
     render() {
@@ -19,13 +21,15 @@ export default class ReviewSlider extends React.Component {
         // }
         const settings = {
             dots: true,
-            slidesToShow: all, /*ААА, чому я зразу до цього не дійшов...*/
+            // slidesToShow: all(), /*ААА, чому я зразу до цього не дійшов...*/
+            slidesToShow: 3,
+            slidesToScroll: 1,
             infinite: true,
             speed: 300,
-            slidesToScroll: 1,
-            // centerMode: true,
+            centerMode: true,
             adaptiveHeight: true,
             arrows: false,
+            variableWidth: true,
             // autoplay: true,
             // autoplaySpeed: 3000,
         }
@@ -110,9 +114,12 @@ export default class ReviewSlider extends React.Component {
                 <div className="review__container">
                     <h2 className="review__title main-title light-text">Відгуки наших клієнтів</h2>
                 </div>
+                .                    {/*</Slider>*/}
+
+
                 <div className="variable-width dots_slick">
-                    <Slider {...settings} className="review_backing">
-                        <div className="review__wrapper-slider-item slider-item-1"> {/*style={{margin: '0px', padding: '0px'}}*/}
+                <Slider {...settings}>
+                         <div className="review__wrapper-slider-item slider-item-1"> {/*style={{margin: '0px', padding: '0px'}}*/}
                             <p>
                                 Сміливо можу рекомендувати цю фірму. У мене був проект під ключ. Ніколи
                                 б не подумав раніше, що можна просто розказати дизайнеру, що ти хочеш бачити і через
@@ -176,8 +183,9 @@ export default class ReviewSlider extends React.Component {
                                 <p style={{transform: 'translate(0%, 200%)'}}>Хмельницкий</p>
                             </div>
                         </div>
-                    </Slider>
+                </Slider>
                 </div>
+
             </section>
         );
     }

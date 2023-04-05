@@ -457,37 +457,29 @@ main {
 }
 
 .variable-width {
-    margin-left: 9%;
+    /*margin-left: 9%;*/
+    margin-left: 0%;
 }
 
 .review .slick-list {
     padding: 0px 90px !important;
 }
 
-.review_backing{
-
-}
-
-.variable-width .slick-track {
-    display: flex;
-    gap: 30px;
-    margin-left: -354px;
-    /*width: 500px; !* встановлення ширини елементів в слайдері *!*/
-    /*position: absolute; !* робить елементи абсолютними *!*/
-    /*top: 0; !* позиціює елементи вертикально на початок слайдера *!*/
-    /*left: 0; !* позиціює елементи горизонтально на початок слайдера *!*/
-    /*margin-right: 10px; !* встановлення відступу між елементами *!*/
-}
-
-/*.slider-item {*/
-/*    !*max-width: 612px;*!*/
+/*.variable-width .slick-track {*/
+/*    display: flex;*/
+/*    gap: 30px;*/
+/*    margin-left: -354px;*/
 /*    !*width: 500px; !* встановлення ширини елементів в слайдері *!*!*/
 /*    !*position: absolute; !* робить елементи абсолютними *!*!*/
-/*    top: 0; !* позиціює елементи вертикально на початок слайдера *!*/
-/*    left: 0; !* позиціює елементи горизонтально на початок слайдера *!*/
-/*    margin-right: 10px; !* встановлення відступу між елементами *!*/
-/*    margin-left: 10px;*/
+/*    !*top: 0; !* позиціює елементи вертикально на початок слайдера *!*!*/
+/*    !*left: 0; !* позиціює елементи горизонтально на початок слайдера *!*!*/
+/*    !*margin-right: 10px; !* встановлення відступу між елементами *!*!*/
 /*}*/
+.variable-width .slick-track {   /*FIX BLEAT!*/
+    display: flex;
+    gap: 30px;
+    margin-left: -110px;
+}
 
 .slider-item-1 {
     /*max-width: 612px;*/
@@ -508,13 +500,15 @@ main {
 }
 
 .variable-width {
-    padding-top: 100px;
+    /*padding-top: 100px;*/
+    padding-top: 10px;
 }
 
 .variable-width.dots_slick .slick-dots {
     max-width: 1057px;
     background-color: rgba(249, 249, 249, 0.23);
-    margin: 92px 15px 0;
+    /*margin: 92px 15px 0;*/
+    margin: 92px 9% 0;
     transform: translate3d(0px, 0px, 0px);
     width: 100%;
 }
@@ -524,7 +518,10 @@ main {
 }
 
 .variable-width.dots_slick .slick-dots li {
-    max-width: 243px; /*Ширина дотсів*/
+    /*max-width: 243px; !*Ширина дотсів*!*/
+
+    max-width: 175px;
+    transform: translate3d(-0px, 0px, 0px);
 }
 
 .variable-width.slick-initialized .slick-slide {
@@ -863,7 +860,8 @@ main {
 }
 
 .similar-projects .variable-width.slick-initialized .slick-slide {
-    max-width: 350px;
+    /*max-width: 350px;*/
+    min-width: 300px !important;
 }
 
 .similar-projects .variable-width {
