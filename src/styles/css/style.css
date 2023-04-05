@@ -475,14 +475,13 @@ main {
 /*    !*left: 0; !* позиціює елементи горизонтально на початок слайдера *!*!*/
 /*    !*margin-right: 10px; !* встановлення відступу між елементами *!*!*/
 /*}*/
-.variable-width .slick-track {   /*FIX BLEAT!*/
+.variable-width .slick-track {   /*NO FIX BLEAT!*/
     display: flex;
     gap: 30px;
-    margin-left: -110px;
+    margin-left: -90px;
 }
 
 .slider-item-1 {
-    /*max-width: 612px;*/
     width: 612px !important;
     height: 425px;
 }
