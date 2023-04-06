@@ -13,8 +13,8 @@ export default class ReviewSlider extends React.Component {
             adaptiveHeight: true,
             arrows: false,
             variableWidth: true,
-            // autoplay: true,
-            // autoplaySpeed: 3000, надьо?
+            autoplay: true,
+            autoplaySpeed: 8000, /*надьо?*/
         }
         return (
             <section className="review">

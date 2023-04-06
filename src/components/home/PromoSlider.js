@@ -1,27 +1,19 @@
 import React from 'react';
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
-import Image from "../utils/Image";
 import room from "../../styles/img/1.jpg";
 // import logo_footer from "../../styles/img/logo-footer.svg";
 
 export default class PromoSlider extends React.Component {
     render() {
         const settings = {
-
             dots: true,
             infinite: true,
             speed: 300,
             slidesToShow: 1,
             adaptiveHeight: true,
-
             arrows: false,
             autoplay: true,
             autoplaySpeed: 3000,
-            //test
-            // slidesToScroll: 1
         }
         return (
             <section className="unique-design">

@@ -12,7 +12,6 @@ class Base extends React.Component {
     render() {
         return (
             <div>
-
                 {/*<!-- ____________ s1_individual-space ____________ -->*/}
                 <section className="individual-space">
                     <div className="individual-space__container">
