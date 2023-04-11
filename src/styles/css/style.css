@@ -877,7 +877,7 @@ main {
     margin-top: 30px;
 }
 
-/* ___________________________________________________________________________ page_name-furniture _________________________________________________________________ */
+    /* ___________________________________________________________________________ page_name-furniture _________________________________________________________________ */
 .name-furniture__info {
     flex-direction: column;
     justify-content: flex-start;
@@ -1382,8 +1382,13 @@ main {
 /* ____________________________________________________ page-ready-furniture _______________________________________________________________________ */
 #Container .mix {
     /*display: none;*/
-    height: auto;
-    max-height: 100%;
+    display: grid;
+    /*grid-template-columns: repeat(3, 1fr); !* 3 колонки рівної ширини *!*/
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    /*gap: 200px; !* відступ між елементами *!*/
+    gap: 30px 40px; /* відступ між елементами */
+    /*height: auto;*/
+    /*max-height: 100%;*/
 }
 
 #Container .large-block-grid-5>li:nth-of-type(5n+1),
@@ -1549,13 +1554,14 @@ main {
 .ready-furniture__img img {
     max-width: 100%;
     object-fit: cover;
+
 }
 
-.ready-furniture__row {
-    display: flex;
-    flex-direction: column;
-    row-gap: 40px;
-}
+/*.ready-furniture__row {*/   /*AAAAAAAAAAAAAAAAa FIX?*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    row-gap: 40px;*/
+/*}*/
 
 .btn__more {
     padding: 80px 0;

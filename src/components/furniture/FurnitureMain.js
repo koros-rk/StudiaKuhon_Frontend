@@ -11,8 +11,8 @@ const FurnitureMain = () => {
     const [nextURL, setNextURL] = React.useState('')
 
     const [furnitureLeft, setFurnitureLeft] = React.useState([])
-    const [furnitureMiddle, setFurnitureMiddle] = React.useState([])
-    const [furnitureRight, setFurnitureRight] = React.useState([])
+    // const [furnitureMiddle, setFurnitureMiddle] = React.useState([])
+    // const [furnitureRight, setFurnitureRight] = React.useState([])
 
     const [isPagination, setIsPagination] = React.useState(true)
 
@@ -50,31 +50,32 @@ const FurnitureMain = () => {
     }
 
     const updateDesigns = (data) => {
-        const chunks = chunkify(data, 3, true)
+        const chunks = chunkify(data, 1, true)
 
         if (chunks[0]) {
             setFurnitureLeft(current => [...current, ...chunks[0]])
-        } else {
+        }
+        else {
             setFurnitureLeft(current => [...current, ...[]])
         }
 
-        if (chunks[1]) {
-            setFurnitureMiddle(current => [...current, ...chunks[1]])
-        } else {
-            setFurnitureMiddle(current => [...current, ...[]])
-        }
-
-        if (chunks[2]) {
-            setFurnitureRight(current => [...current, ...chunks[2]])
-        } else {
-            setFurnitureRight(current => [...current, ...[]])
-        }
+        // if (chunks[1]) {
+        //     setFurnitureMiddle(current => [...current, ...chunks[1]])
+        // } else {
+        //     setFurnitureMiddle(current => [...current, ...[]])
+        // }
+        //
+        // if (chunks[2]) {
+        //     setFurnitureRight(current => [...current, ...chunks[2]])
+        // } else {
+        //     setFurnitureRight(current => [...current, ...[]])
+        // }
     }
 
     const makeFilter = async (filterString) => {
         await setFurnitureLeft([])
-        await setFurnitureMiddle([])
-        await setFurnitureRight([])
+        // await setFurnitureMiddle([])
+        // await setFurnitureRight([])
 
         console.log(filterString)
 
@@ -95,28 +96,28 @@ const FurnitureMain = () => {
             <div className="ready-furniture-bg"></div>
 
             <div className="ready-furniture__container">
-                <div className="row">
+                <div className="">
                     <div className="small-12 columns small-centered">
                         <div className="container" id="Container">
                             <div className="small-block-grid-3 medium-block-grid-4 large-block-grid-5">
 
-                                <div className="ready-furniture__row">
+                                <div className="mix">
 
                                     {furnitureLeft.map(item => (<FurnitureItem key={item.id} item={item}/>))}
 
                                 </div>
 
-                                <div className="ready-furniture__row">
+                                {/*<div className="ready-furniture__row">*/}
 
-                                    {furnitureMiddle.map(item => (<FurnitureItem key={item.id} item={item}/>))}
+                                {/*    {furnitureMiddle.map(item => (<FurnitureItem key={item.id} item={item}/>))}*/}
 
-                                </div>
+                                {/*</div>*/}
 
-                                <div className="ready-furniture__row">
+                                {/*<div className="ready-furniture__row">*/}
 
-                                    {furnitureRight.map(item => (<FurnitureItem key={item.id} item={item}/>))}
+                                {/*    {furnitureRight.map(item => (<FurnitureItem key={item.id} item={item}/>))}*/}
 
-                                </div>
+                                {/*</div>*/}
 
                             </div>
 
